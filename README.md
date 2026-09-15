@@ -153,3 +153,13 @@ public class Practice03_Fibonacci{
 }
 ```
 <img width="1626" height="220" alt="image" src="https://github.com/user-attachments/assets/f7d6208e-887e-4563-a48f-6ef95c3b53f1" />
+
+---
+
+## 水仙花数：个/十/百位 分割
+```
+num
+个位：num % 10
+十位：num / 10 % 10
+百位：num / 100
+```
