@@ -1,0 +1,11 @@
+# Java 编译产物
+*.class
+# 其他常见冗余文件
+*.jar
+*.war
+*.log
+# IDE缓存（IDEA/Eclipse）
+.idea/
+*.iml
+target/
+bin/
