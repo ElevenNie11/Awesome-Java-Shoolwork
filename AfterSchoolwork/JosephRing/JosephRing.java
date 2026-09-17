@@ -1,5 +1,5 @@
 // 约瑟夫环：循环单链表（一共n个人，每次数m，m出局）
-package PTA01;
+package AfterSchoolwork.JosephRing;
 
 public class JosephRing {
     // 节点
