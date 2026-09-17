@@ -154,6 +154,60 @@ public class Practice03_Fibonacci{
 ```
 <img width="1626" height="220" alt="image" src="https://github.com/user-attachments/assets/f7d6208e-887e-4563-a48f-6ef95c3b53f1" />
 
+### 例三：爬楼梯（三阶斐波那契）
+```
+import java.util.Scanner;
+
+public class Upstair {
+    public static int fun(int n){
+        if(n == 0){
+            return 1;
+        }
+        if(n == 1){
+            return 1;
+        }
+        if(n == 2){
+            return 2;
+        }
+        return fun(n - 1) + fun(n - 2) + fun(n - 3);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+        System.out.println(fun(n));
+    }
+}
+```
+<img width="1290" height="1031" alt="b33640d13acc6e1a0f152849ff099ccf" src="https://github.com/user-attachments/assets/eefdb555-8851-47df-a3fe-514cdb3087c5" />
+
+#### 执行过程
+**调用栈遵循“先一路下探，再逐层返回”**
+- fun(4)不会立刻算，而是先问fun(3)
+- fun(3)又会先问fun(2)...一直下探到fun(2)、fun(1)、fun(0)这些基准情形直接返回
+- 拿到子问题的答案以后，再**一层层往上相加**：fun(3) = 2 + 1 + 1 = 4 ; fun(4) = fun(3) + fun(2) + fun(1) = 4 + 2 + 1 = 7
+
+```
+// 基准情形（出口）：问题小到不用再拆，直接给出答案（没有它就会无限递归，栈溢出）
+if(n == 0) return 1;
+if(n == 1) return 1;
+if(n == 2) return 2;
+// 递推关系：把问题拆小，继续调用自己
+return fun(n - 1) + fun(n - 2) + fun(n -3);
+```
+
+### Q；为什么递推式是这三个数相加？
+### A：“爬楼梯问题”：一次可以爬1级、2级、3级台阶，问走到第n级有几种走法。
+- 最后一步走1级：前面要走完(n - 1)级，一共有fun(n - 1)种走法
+- 最后一步走2级：前面要走完(n - 2)级，一共有fun(n - 2)种走法
+- 最后一步走3级：前面要走完(n - 3)级，一共有fun(n - 3)种走法
+- 三种情况互不重叠，加起来就是总走法
+
+### 递归的代价
+fun(2)和fun(1)再树里被算了多次：每个子问题都要从头重新计算一遍，所以本次纯递归的时间复杂度为O(3^n)指数级。n到30左右就会明显卡顿，优化版本就是进行记忆化（把计算过的结果存起来）
+```
+
+```
 ---
 
 ## 水仙花数：个/十/百位 分割
