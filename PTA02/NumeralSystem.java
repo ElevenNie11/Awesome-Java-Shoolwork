@@ -27,3 +27,13 @@ public class NumeralSystem {
         fun(n);
     }
 }
+
+// eg：60转换成15进制
+// fun(60/15)即fun(4) 进入新栈：fun(4)
+// 由于4不等于0，所以不return
+// 继续有：fun(4/15)即fun(0) 进入新栈：fun(0)
+// n==0，return
+// 开始一层层往上回溯
+// 1. remainder = 4 % 15 = 4。由于4<10，所以输出：4
+// 2. remainder = 60 % 15 = 0。由于0<10，所以输出：0
+// 所以最终结果为：40
