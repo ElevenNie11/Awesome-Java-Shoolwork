@@ -236,3 +236,27 @@ num
 十位：num / 10 % 10
 百位：num / 100
 ```
+
+---
+
+## 最大公约数Greatest Common Divisor（GCD）
+```
+例如：12 和 8
+- 12的因数：1、2、3、4、6、12
+- 8的因数： 1、2、4、8
+- 它们共同拥有：1、2、4
+- 其中最大的就是：4
+- 所以：gcd(12, 8) = 4
+```
+
+### gcd的经典写法：辗转相除法
+```
+public static int gcd(int a, int b){
+  while(b != 0){
+    int temp = a % b;
+    a = b;
+    b = temp;
+  }
+  return a;
+}
+```
