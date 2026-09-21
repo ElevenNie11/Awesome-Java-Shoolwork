@@ -1,7 +1,7 @@
 package AfterSchoolwork.GCD;
 import java.util.Scanner;
 
-public class gcd {
+public class gcd01{
     public static int GCD(int a, int b){
         while (b != 0){
             int temp = a % b;
