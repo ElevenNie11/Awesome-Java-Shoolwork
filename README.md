@@ -1,11 +1,9 @@
 # Java作业合集&重要知识的笔记
 
 # 目录
-### [递归Recursion](#递归Recursion)
-
-### [水仙花数](#水仙花数：个十百位-分割)
-
-### [最大公约数](#最大公约数Greatest-Common-Divisor（GCD）)
+### [递归Recursion](#递归recursion)
+### [水仙花数](#水仙花数个十百位-分割)
+### [最大公约数](#最大公约数greatest-common-divisorgcd)
 
 ---
 
