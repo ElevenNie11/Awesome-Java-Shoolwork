@@ -249,14 +249,38 @@ num
 - 所以：gcd(12, 8) = 4
 ```
 
-### gcd的经典写法：辗转相除法
+### gcd的经典写法01：辗转相除法（效率最高）
 ```
-public static int gcd(int a, int b){
-  while(b != 0){
-    int temp = a % b;
-    a = b;
-    b = temp;
+public static int gcd(int num1, int num2){
+  while(num2 != 0){
+    int temp = num1 % num2;
+    num1 = num2;
+    num2 = temp;
   }
-  return a;
+  return num1;
+}
+```
+
+### gcd的经典写法02：更相减损法
+```
+public static int gcd(int num1, int num2){
+  while(num1 != num2){
+    if(num1 > num2)
+        num1 = num1 - num2;     // 大数 - 小数
+    if(num2 > num1)
+        num2 = num2 - num1;     // 大数- 小数
+  }
+  return num1;
+}
+```
+
+### gcd的经典写法03：for循环（算法效率不高）
+```
+public static int gcd(int num1, int num2){
+  int gcd = 1;
+  for(int i = 1; num1 % i == 0 && num2 % i ==0; i++){
+            gcd = i;
+  }
+  return gcd;
 }
 ```
