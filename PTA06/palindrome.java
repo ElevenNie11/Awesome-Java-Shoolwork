@@ -6,7 +6,7 @@ public class palindrome {
         Scanner input = new Scanner(System.in);
         String str = input.nextLine();
         input.close();
-        // 用 StringBulider 保存过滤后的字符串
+        // 用 StringBuilder 保存过滤后的字符串
         StringBuilder sb = new StringBuilder();
         // 遍历原字符串
         for(int i = 0; i < str.length(); i++){
