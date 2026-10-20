@@ -81,3 +81,7 @@ class AgeException extends Exception{
         return getMessage();    // 只输出too young / too old，不带类名
     }
 }
+
+// 【注意】
+// AgeException extends Exception 属于受检异常（checked exception）
+// Java规定：方法体内 throw 一个受检异常，要么自己 try-catch 掉，要么必须在方法签名上用 throws 声明
