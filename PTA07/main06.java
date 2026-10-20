@@ -38,12 +38,19 @@ class Bmi{
     }
 }
 
+// 定义一个自定义异常类 BmiException，继承自 Exception
 class BmiException extends Exception{
+    // 构造方法：接收一个字符串作为异常提示信息
+    // 把信息传给父类Exception，父类保存了，后面getMessage()就可以看到
     public BmiException(String message){
         super(message);
     }
+    // 重写 toString 方法
     @Override 
     public String toString(){
+        // 返回异常信息
+        // 原本Exception的toString()默认输出：“异常类名：异常信息”
+        // 但是这里重写之后，直接只返回异常消息本身，不会带上异常类名
         return getMessage();
     }
 }
