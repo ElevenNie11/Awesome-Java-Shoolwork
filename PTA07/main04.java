@@ -29,3 +29,11 @@ public class main04 {
         sc.close();
     }
 }
+
+// 多种异常捕获 这几个异常之间存在继承：
+// Exception
+//  └─ RuntimeException
+//      └─ IllegalArgumentException
+//          └─ NumberFormatException
+// 遵循规则：【子类异常在前，父类异常在后，从最具体到最宽泛】
+// 所以 Exception作为最上层类型必须放在最后，充当“兜底”分支
