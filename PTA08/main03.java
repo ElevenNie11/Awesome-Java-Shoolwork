@@ -15,9 +15,11 @@ public class main03 {
         }
 
         for(int i = 1; i < a; i++){
+            // 1 2 3移到队尾，4 成了队首
             for(int j = 1; j < b; j++){
                 list.addLast(list.removeFirst());
             }
+            // 输出队首 4
             System.out.print(list.removeFirst() + " ");
         }
         System.out.println(list.getFirst());
